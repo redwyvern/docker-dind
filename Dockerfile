@@ -7,3 +7,5 @@ RUN update-ca-certificates
 
 COPY ca-certificates/redwyvern/redwyvern-ca.crt /etc/docker/certs.d/docker.artifactory.weedon.org.au/ca.crt
 
+# Disable TLS as this causes docker torun on port 2376 instead of 2375
+ENV DOCKER_TLS_CERTDIR=""
